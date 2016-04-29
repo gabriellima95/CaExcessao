@@ -1,15 +1,21 @@
 
 public class CalculatorEngine {
-	double value;
-	double keep;
+	int value;
+	int keep;
 	char toDo;
+	int dividezero=0;
 	
 	void binaryOperation(char op) {
 		keep = value;
 		value = 0;
 		toDo = op;
 	}
-	
+	int dividezero(){
+		if (dividezero==1)
+			return 1;
+		else {return 0;}
+
+	}
 	
 	void add()	{binaryOperation('+');}
 	void subtract()	{binaryOperation('-');}
@@ -17,6 +23,7 @@ public class CalculatorEngine {
 	void divide()	{binaryOperation('/');}
 	
 	void compute()	{
+		dividezero = 0;
 		if (toDo=='+')
 			value=value+keep;
 		else if (toDo=='-')
@@ -24,10 +31,10 @@ public class CalculatorEngine {
 		else if (toDo=='*')
 			value=value*keep;
 		else if (toDo=='/')
-			value=keep/value;
+			try{value=keep/value;}
+		catch(ArithmeticException excecao){
+		dividezero=1;}
 		keep=0;
-		System.out.println("" + keep);
-		System.out.println(" " + value);
 	}
 	void clear() {
 		value=0;
@@ -35,9 +42,8 @@ public class CalculatorEngine {
 	}
 	void digit(int x) {
 		value=value*10+x;
-		System.out.println("" + value);
 	}
-	double display() {
+	int display() {
 		return(value);
 	}
 	CalculatorEngine() { clear(); }
