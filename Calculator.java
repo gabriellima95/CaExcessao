@@ -92,6 +92,7 @@ public Calculator() {
      getContentPane()     .add(botao8);
      getContentPane()     .add(botao9);
      getContentPane()     .add(textArea);
+     Panel.add(textArea);
 }
 CalculatorEngine engine = new CalculatorEngine();
 public void actionPerformed (ActionEvent e)
@@ -120,7 +121,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(0);
      }
      if(e.getSource() == botao1){
-         // é o segundo valor ?
+         
          if(click){
              textArea.setText("1");
          }
@@ -133,7 +134,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(1);
      }
      if(e.getSource() == botao2){
-         // é o segundo valor ?
+         
          if(click){
              textArea.setText("2");
          }
@@ -146,7 +147,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(2);
      }
      if(e.getSource() == botao3){
-         // é o segundo valor ?
+         
          if(click){
              textArea.setText("3");
          }            
@@ -159,7 +160,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(3);
      }
      if(e.getSource() == botao6){
-         // é o segundo valor ?
+         
          if(click){
              textArea.setText("6");
          }            
@@ -172,7 +173,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(6);
      }
      if(e.getSource() == botao4){
-         // é o segundo valor ?
+         
          if(click){
              textArea.setText("4");
          }            
@@ -185,7 +186,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(4);
      }
      if(e.getSource() == botao5){
-         // é o segundo valor ?
+         
          if(click){
              textArea.setText("5");
          }            
@@ -198,7 +199,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(5);
      }
      if(e.getSource() == botao7){
-         // é o segundo valor ?
+         
          if(click){
              textArea.setText("7");
          }            
@@ -211,7 +212,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(7);
      }
      if(e.getSource() == botao8){
-         // é o segundo valor ?
+         
          if(click){
              textArea.setText("8");
          }            
@@ -224,7 +225,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(8);
      }
      if(e.getSource() == botao9){
-         // é o segundo valor ?
+         
          if(click){
              textArea.setText("9");
          }            
@@ -258,7 +259,9 @@ public void actionPerformed (ActionEvent e)
      }
      if(e.getSource() == botaoig){
     	 engine.compute();
+    	 if(engine.dividezero==0)
     	 textArea.setText("" + engine.display());
+    	 else textArea.setText("Impossivel dividir por zero");
     	 engine.clear();
     	 igual=true;
      }
@@ -266,7 +269,7 @@ public void actionPerformed (ActionEvent e)
 	public static void main(String[] args)
 {
 	Calculator Calculadora = new Calculator();
-	Calculadora.setVisible(true);
-	Calculadora.repaint(); 
+	Calculadora.setVisible(true); 
+	Calculadora.add(Panel,BorderLayout.NORTH);
 }
 }
