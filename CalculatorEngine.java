@@ -1,7 +1,7 @@
 
 public class CalculatorEngine {
-	int value;
-	int keep;
+	double value;
+	double keep;
 	char toDo;
 	
 	void binaryOperation(char op) {
@@ -37,7 +37,7 @@ public class CalculatorEngine {
 		value=value*10+x;
 		System.out.println("" + value);
 	}
-	int display() {
+	double display() {
 		return(value);
 	}
 	CalculatorEngine() { clear(); }
