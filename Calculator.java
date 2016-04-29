@@ -27,15 +27,14 @@ public class Calculator extends JFrame implements ActionListener{
 	private JButton ce = new JButton("CE");
 	private boolean click = false;
 	private boolean igual=false;
-	private JTextField textArea = new JTextField(20);
+	private JTextArea textArea = new JTextArea(1,20);
 
 public Calculator() {
 	
     setTitle("Calculadora");
-    setSize(400,300);
+    setSize(300,300);
     setLocationRelativeTo(null);
-    setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    textArea     .setHorizontalAlignment(textArea.RIGHT); 
+    setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
     textArea    .setText("0"); 
     textArea    .setCaretPosition(1); 
     textArea     .setEditable(false); 
@@ -108,7 +107,7 @@ public void actionPerformed (ActionEvent e)
          }
 
          else{
-             // o primeiro caracter é 0 ?
+             // o primeiro caracter Ã© 0 ?
              if((textArea.getText().length() == 1) && (textArea.getText().equals("0"))){
                  textArea.setText("0");
              }
@@ -121,7 +120,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(0);
      }
      if(e.getSource() == botao1){
-         // é o segundo valor ?
+         // Ã© o segundo valor ?
          if(click){
              textArea.setText("1");
          }
@@ -134,7 +133,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(1);
      }
      if(e.getSource() == botao2){
-         // é o segundo valor ?
+         // Ã© o segundo valor ?
          if(click){
              textArea.setText("2");
          }
@@ -147,7 +146,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(2);
      }
      if(e.getSource() == botao3){
-         // é o segundo valor ?
+         // Ã© o segundo valor ?
          if(click){
              textArea.setText("3");
          }            
@@ -160,7 +159,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(3);
      }
      if(e.getSource() == botao6){
-         // é o segundo valor ?
+         // Ã© o segundo valor ?
          if(click){
              textArea.setText("6");
          }            
@@ -173,7 +172,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(6);
      }
      if(e.getSource() == botao4){
-         // é o segundo valor ?
+         // Ã© o segundo valor ?
          if(click){
              textArea.setText("4");
          }            
@@ -186,7 +185,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(4);
      }
      if(e.getSource() == botao5){
-         // é o segundo valor ?
+         // Ã© o segundo valor ?
          if(click){
              textArea.setText("5");
          }            
@@ -199,7 +198,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(5);
      }
      if(e.getSource() == botao7){
-         // é o segundo valor ?
+         // Ã© o segundo valor ?
          if(click){
              textArea.setText("7");
          }            
@@ -212,7 +211,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(7);
      }
      if(e.getSource() == botao8){
-         // é o segundo valor ?
+         // Ã© o segundo valor ?
          if(click){
              textArea.setText("8");
          }            
@@ -225,7 +224,7 @@ public void actionPerformed (ActionEvent e)
          engine.digit(8);
      }
      if(e.getSource() == botao9){
-         // é o segundo valor ?
+         // Ã© o segundo valor ?
          if(click){
              textArea.setText("9");
          }            
@@ -269,6 +268,5 @@ public void actionPerformed (ActionEvent e)
 	Calculator Calculadora = new Calculator();
 	Calculadora.setVisible(true);
 	Calculadora.repaint(); 
-	//Calculadora.add(getContentPane(),BorderLayout.NORTH);
 }
 }
